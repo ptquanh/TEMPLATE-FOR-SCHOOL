@@ -31,7 +31,7 @@ li {
   
 }
 header {
-  
+  position: relative;
   background-image: url("img/bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -95,7 +95,8 @@ header {
   color: white;
 }
 .header-text {
-  position: absolute;
+  /* position: absolute; */
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -103,20 +104,26 @@ header {
   min-height: 300px;
   text-align: center;
   color: white;
+  
+  
 }
 .header-text h1 {
-  font-size: 40px;
-  width: 45vw;
-  margin-bottom: 15px;
+  font-size: 38px;
+  width: 100vw;
   text-align: center;
-
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 .header-text p {
   font-family: var(--main-text-font);
-  width: 43vw;
+  width: 95vw;
   font-size: 20px;
-  margin-bottom: 10px;
-  
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: relative;
 }
 .header-text button {
   border-radius: 5px;
@@ -131,12 +138,14 @@ header {
   font-weight: bold;
   transition: all 0.3s ease;
   cursor: pointer;
+  position:relative;
 }
-.header-text button:active {
-  
+.header-text button:hover {
+  transform: scale(1.2);
   background-color: white;
   opacity: 0.5;
   color: black;
+  transition: all 0.5s ease;
 }
 .header-top>i{
   cursor: pointer;
@@ -182,8 +191,12 @@ header {
   .header-top {
     padding: 10px 12px;
   }
+  .course-item, .brand-item, .fa-item-container {
+    width: 100%!important;
+    margin-bottom: 20px;
+  }
 }
-
+/* ----------course----------- */
 .course {
   padding: 50px 0;
 }
@@ -192,6 +205,15 @@ header {
   text-align: center;
   margin-bottom: 30px;
   color: black;
+  font-size: 30px;
+  width: 100vw;
+}
+@media (min-width: 576px) {
+  .course-item-container, .brand-item-container, .fa-item-container {
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }
 .course-item {
   width: 30%;
@@ -199,15 +221,14 @@ header {
   background-color: rgb(223, 193, 175);
   padding: 20px 30px;
   border-radius: 5px;
-  margin-right: 5%;
   transition: all 0.5s ease;
+  
 }
 .course-item:hover {
   box-shadow: 10px 10px 5px 5px rgb(94, 94, 94);
 }
 .course-item-container {
-  display: flex;
-  margin-left: 5%;
+  justify-content: space-between;
 }
 .course-item h2 {
   font-family: var(--main-text-font);
@@ -217,4 +238,228 @@ header {
 .course-item p {
   font-family: var(--main-text-font);
   color: black;
+  font-weight: 450;
+  word-wrap: break-word;
+}
+/* ----------brand----------- */
+.brand {
+  padding: 50px 0;
+}
+.brand h1 {
+  font-family: var(--main-text-font);
+  text-align: center;
+  margin-bottom: 30px;
+  color: black;
+  font-size: 30px;
+  width: 100vw;
+}
+
+.brand-item {
+  width: 30%;
+  padding: 20px 30px;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  position: relative;
+}
+.brand-item-container {
+  justify-content: space-between;
+}
+.brand-item h2 {
+  font-family: var(--main-text-font);
+  opacity: 0;
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.brand-item img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.brand-item::before {
+  display: block;
+  content: "";
+  width: 87%;
+  height: 90%;
+  border-radius: 5px;
+  position: absolute;
+  opacity: 0;
+  background-color: wheat;
+ }
+
+.brand-item:hover::before {
+  opacity: 0.5;
+  background-color: wheat;
+}
+.brand-item:hover h2 {
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+/* --------------facilites---------------- */
+.fa {
+  padding: 50px 0;
+}
+.fa h1 {
+  font-family: var(--main-text-font);
+  text-align: center;
+  margin-bottom: 30px;
+  color: black;
+  font-size: 45px;
+}
+
+.fa-item {
+  width: 30%;
+  padding: 20px 30px;
+  border-radius: 5px;
+}
+.fa-item-container {
+  justify-content: space-between;
+}
+.fa-item h2 {
+  font-family: var(--main-text-font);
+  color: black;
+  margin: 15px 0 6px 0;
+}
+.fa-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.fa-item img:hover {
+  transform: scale(1.04);
+  transition: all 0.5s ease;
+}
+.fa-item p {
+  font-family: var(--main-text-font);
+  font-weight: 450;
+}
+
+/* --------------feedbacks---------------- */
+.fb {
+  padding: 50px 0;
+}
+.fb> h1 {
+  font-family: var(--main-text-font);
+  text-align: center;
+  margin-bottom: 30px;
+  color: black;
+}
+.fb-text h1 {
+  font-family: var(--main-text-font);
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 12px 0 6px;
+  
+}
+.fb-item {
+  width: 30%;
+  margin-right: 5%;
+  background-color: rgb(231, 199, 130);
+  padding: 30px 6px;
+}
+.fb-item-container {
+  display: flex;
+  margin-left: 5%;
+  justify-content: space-between;
+  
+}
+.fb-item:hover img {
+  border: 5px solid var(--main-color)
+}
+.fb-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  transition: all 0.5s ease;
+  border-radius: 50%;
+}
+.fb-item p {
+  font-family: var(--main-text-font);
+  font-weight: 350;
+  color: black;
+  font-size: 16px;
+  word-wrap:break-word;
+}
+.fb-text {
+  width: 70%;
+  padding-left: 20px; 
+}
+.fb-item i{
+  color: yellow;
+}
+/* ---------contact---------- */
+.contact {
+  background-image: url("img/contact.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 0;
+  text-align: center;
+  position:relative;
+  overflow: hidden;
+  max-height: 300px;
+}
+
+.contact-bg {
+  height: 300px;
+  transform: translate(0,-100px);
+  background: black;
+  overflow: hidden;
+  padding: 50px 0;
+  opacity: 0.8;
+}
+
+.contact-bg p {
+  color: white;
+  font-size: 25px;
+  font-family: var(--main-text-font);
+  font-weight: 600;
+  padding: 30px;
+}
+.contact button {
+  height: 40px;
+  width: 150px;
+  cursor: pointer;
+  margin-top: 20px;
+  background-color: var(--main-color);
+  border: none;
+  color: white;
+  font-family: var(--main-text-font);
+  border-radius: 5px;
+  font-size: 20px;
+  transition: all 0.5s ease;
+}
+.contact button:hover {
+  background: transparent;
+  border: 2px solid var(--main-color);
+}
+/* ----------footer------------ */
+footer {
+  padding: 50px 0 6px;
+  text-align: center;
+}
+footer h1 {
+  font-family: var(--main-text-font);
+  color: black;
+  margin-bottom: 30px;
+}
+footer p {
+  font-family: var(--main-text-font);
+  color: black;
+}
+footer i {
+  margin-top: 12px;
+  color: var(--main-color);
+  font-size: 20px;
+  cursor: pointer;
+}
+footer span {
+  color: red;
 }
