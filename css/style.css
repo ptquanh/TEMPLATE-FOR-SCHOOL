@@ -32,7 +32,7 @@ li {
 }
 header {
   position: relative;
-  background-image: url("img/bg.jpg");
+  background-image: url("../img/bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -395,7 +395,7 @@ header {
 }
 /* ---------contact---------- */
 .contact {
-  background-image: url("./img/contact.jpg");
+  background-image: url("../img/contact.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
